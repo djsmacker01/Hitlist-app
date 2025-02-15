@@ -21,8 +21,8 @@ const promise = databases.createDocument(
       "date-added": new Date(),
       "role": "Software Engineer",
       "location": "England",
-      "status": "Active",
-      "technologies": ["JavaScript", "Node.js", "React"],
+      "position-type": "Full time",
+      "source": "https://100devs.org"
     }
 );
 
