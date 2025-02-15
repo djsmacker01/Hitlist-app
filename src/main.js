@@ -13,10 +13,17 @@ const client = new Client()
 const databases = new Databases(client);
 
 const promise = databases.createDocument(
-    '<DATABASE_ID>',
-    '[COLLECTION_ID]',
+    '67b0fefe00344b30dc82', //database id
+    '67b0ff0c000ac95dd2b4', // collection id
     ID.unique(),
-    {}
+    {
+      "company-name": "SAAN-HUB Solutions",
+      "date-added": new Date(),
+      "role": "Software Engineer",
+      "location": "England",
+      "status": "Active",
+      "technologies": ["JavaScript", "Node.js", "React"],
+    }
 );
 
 promise.then(function (response) {
