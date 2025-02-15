@@ -1,20 +1,20 @@
-import './style.css'
-
-  
+import './style.css'  
 // const client = new Client();
 // client.setProject('67b0fbb6002cc550c81b');  
-
 import { Client, Databases, ID } from "appwrite";
+import dotenv from "dotenv";
+
+dotenv.config() // load environmental variable
 
 const client = new Client()
-    .setEndpoint('https://cloud.appwrite.io/v1')
-    .setProject('67b0fbb6002cc550c81b');
+    .setEndpoint(process.env.APPWRITE_ENDPOINT)
+    .setProject(process.env.APPWRITE_PROJECT_ID);
 
 const databases = new Databases(client);
 
 const promise = databases.createDocument(
-    '67b0fefe00344b30dc82', //database id
-    '67b0ff0c000ac95dd2b4', // collection id
+    process.env.APPWRITE_DATABASE_ID,
+    process.env.APPWRITE_COLLECTION_ID,
     ID.unique(),
     {
       "company-name": "SAAN-HUB Solutions",
