@@ -12,16 +12,16 @@ const client = new Client()
 const databases = new Databases(client);
 
 const promise = databases.createDocument(
-    '67b06e5e002b50bbb9d1',
-    '67b06e7d0021cc4798be',
-    ID.unique(),
+  '67b06e5e002b50bbb9d1',
+  '67b06e7d0021cc4798be',
+  ID.unique(),
   {
     "company-name": "SAAN-HUB Solution",
     "date-added": new Date(),
     "role": "Software Engineer",
     "location": "England",
     "position-type": "Full-time",
-    "source": "https//100devs.org"
+    "source": "https://100devs.org"
      }
 );
 
