@@ -1,20 +1,16 @@
 import './style.css'  
-// const client = new Client();
-// client.setProject('67b0fbb6002cc550c81b');  
 import { Client, Databases, ID } from "appwrite";
-import dotenv from "dotenv";
 
-dotenv.config() // load environmental variable
 
 const client = new Client()
-    .setEndpoint(process.env.APPWRITE_ENDPOINT)
-    .setProject(process.env.APPWRITE_PROJECT_ID);
+    .setEndpoint(import.meta.env.VITE_APPWRITE_ENDPOINT)
+    .setProject(import.meta.env.VITE_APPWRITE_PROJECT_ID);
 
 const databases = new Databases(client);
 
 const promise = databases.createDocument(
-    process.env.APPWRITE_DATABASE_ID,
-    process.env.APPWRITE_COLLECTION_ID,
+    import.meta.env.VITE_APPWRITE_DATABASE_ID,
+    import.meta.env.VITE_APPWRITE_COLLECTION_ID,
     ID.unique(),
     {
       "company-name": "SAAN-HUB Solutions",
