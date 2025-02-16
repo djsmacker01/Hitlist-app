@@ -14,7 +14,7 @@ form.addEventListener('submit', addJob)
 
 function addJob(e) {
   e.preventDefault()
-    const promise = databases.createDocument(
+    const job = databases.createDocument(
     import.meta.env.VITE_APPWRITE_DATABASE_ID,
     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
     ID.unique(),
@@ -27,8 +27,8 @@ function addJob(e) {
       "source": e.target.source.value
     }
     );
-  promise.then(function (response) {
-        console.log(response);
+    job.then(function (response) {
+        addJobsToDom()
     }, function (error) {
         console.log(error);
     });
