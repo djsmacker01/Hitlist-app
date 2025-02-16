@@ -43,8 +43,11 @@ function addJob(e) {
    
   );
    // console.log(response.documents[3]);
-   
-
+   response.documents.forEach((job) => {
+     const li = document.createElement('li');
+     li.textContent = `${job["company-name"]} ${job['date-added']} ${job["role"]} ${job["location"]} ${job['position-type']} ${job['source']}`;
+     document.querySelector('ul').appendChild(li)
+   })
 // promise.then(function (response) {
 //     console.log(response);
 // }, function (error) {
