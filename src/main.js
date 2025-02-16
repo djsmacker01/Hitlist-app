@@ -48,6 +48,9 @@ function addJob(e) {
      const li = document.createElement('li');
      li.textContent = `${job["company-name"]} ${job['date-added']} ${job["role"]} ${job["location"]} ${job['position-type']} ${job['source']}`;
      document.querySelector('ul').appendChild(li)
+
+     const btn = document.createElement('button');
+     btn.textContent = ''
    })
 // promise.then(function (response) {
 //     console.log(response);
