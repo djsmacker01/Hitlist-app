@@ -37,7 +37,7 @@ function addJob(e) {
 }
 // Populate list of jobs to the dom
  async function addJobsToDom() {
-  
+   document.querySelector('ul').innerHTML = ''
   let response = await databases.listDocuments(
     import.meta.env.VITE_APPWRITE_DATABASE_ID,
     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
