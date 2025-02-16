@@ -40,9 +40,7 @@ function addJobsToDom() {
   let promise = databases.listDocuments(
     import.meta.env.VITE_APPWRITE_DATABASE_ID,
     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
-    [
-        Query.equal('title', 'Avatar')
-    ]
+   
 );
 
 promise.then(function (response) {
@@ -51,6 +49,7 @@ promise.then(function (response) {
     console.log(error);
 });
 }
+addJobsToDom()
 
 // const promise = databases.createDocument(
 //     import.meta.env.VITE_APPWRITE_DATABASE_ID,
