@@ -34,7 +34,7 @@ function addJob(e) {
     });
   form.reset()
 }
-
+// Populate list of jobs to the dom
 function addJobsToDom() {
   
   let promise = databases.listDocuments(
