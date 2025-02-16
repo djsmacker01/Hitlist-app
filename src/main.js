@@ -28,7 +28,8 @@ function addJob(e) {
     }
     );
     job.then(function (response) {
-        addJobsToDom()
+      addJobsToDom()
+      console.log(response);
     }, function (error) {
         console.log(error);
     });
