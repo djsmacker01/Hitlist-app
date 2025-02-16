@@ -28,10 +28,10 @@ function addJob(e) {
     }
     );
   promise.then(function (response) {
-    console.log(response);
-}, function (error) {
-    console.log(error);
-});
+        console.log(response);
+    }, function (error) {
+        console.log(error);
+    });
   form.reset()
 }
 
