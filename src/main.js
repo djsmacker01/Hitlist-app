@@ -14,7 +14,7 @@ form.addEventListener('submit', addJob)
 
 function addJob(e) {
   e.preventDefault()
-  const promise = databases.createDocument(
+    const promise = databases.createDocument(
     import.meta.env.VITE_APPWRITE_DATABASE_ID,
     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
     ID.unique(),
@@ -26,7 +26,12 @@ function addJob(e) {
       "position-type": e.target.positionType.value,
       "source": e.target.source.value
     }
-  );
+    );
+  promise.then(function (response) {
+    console.log(response);
+}, function (error) {
+    console.log(error);
+});
   form.reset()
 }
 
@@ -44,8 +49,8 @@ function addJob(e) {
 //     }
 // );
 
-promise.then(function (response) {
-    console.log(response);
-}, function (error) {
-    console.log(error);
-});
+// promise.then(function (response) {
+//     console.log(response);
+// }, function (error) {
+//     console.log(error);
+// });
