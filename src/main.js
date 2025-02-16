@@ -35,19 +35,21 @@ function addJob(e) {
   form.reset()
 }
 // Populate list of jobs to the dom
-function addJobsToDom() {
+ async function addJobsToDom() {
   
-  let promise = databases.listDocuments(
+  let response = await databases.listDocuments(
     import.meta.env.VITE_APPWRITE_DATABASE_ID,
     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
    
-);
+  );
+   // console.log(response.documents[3]);
+   
 
-promise.then(function (response) {
-    console.log(response);
-}, function (error) {
-    console.log(error);
-});
+// promise.then(function (response) {
+//     console.log(response);
+// }, function (error) {
+//     console.log(error);
+// });
 }
 addJobsToDom()
 
