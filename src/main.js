@@ -35,6 +35,23 @@ function addJob(e) {
   form.reset()
 }
 
+function addJobsToDom() {
+  
+  let promise = databases.listDocuments(
+    import.meta.env.VITE_APPWRITE_DATABASE_ID,
+    import.meta.env.VITE_APPWRITE_COLLECTION_ID,
+    [
+        Query.equal('title', 'Avatar')
+    ]
+);
+
+promise.then(function (response) {
+    console.log(response);
+}, function (error) {
+    console.log(error);
+});
+}
+
 // const promise = databases.createDocument(
 //     import.meta.env.VITE_APPWRITE_DATABASE_ID,
 //     import.meta.env.VITE_APPWRITE_COLLECTION_ID,
