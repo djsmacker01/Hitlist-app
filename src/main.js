@@ -48,14 +48,24 @@ function addJob(e) {
      const li = document.createElement('li');
      li.textContent = `${job["company-name"]} ${job['date-added']} ${job["role"]} ${job["location"]} ${job['position-type']} ${job['source']} `;
      
+     li.id = job.$id
      const btn = document.createElement('button');
      btn.textContent = '🛕'
      btn.onclick = () => removeJob(job.$id)
-     
+     li.appendChild(btn)
      document.querySelector('ul').appendChild(li)
 
    
    })
+
+   function removeJob(id) {
+     const result = await databases.deleteDocument(
+    import.meta.env.VITE_APPWRITE_DATABASE_ID, // databaseId
+    import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
+    id // documentId
+);
+
+   }
 // promise.then(function (response) {
 //     console.log(response);
 // }, function (error) {
