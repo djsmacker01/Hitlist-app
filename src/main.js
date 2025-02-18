@@ -52,7 +52,14 @@ function addJob(e) {
      const btn = document.createElement('button');
      btn.textContent = '🛕'
      btn.onclick = () => removeJob(job.$id)
+     
+
+     const coffeeBtn = document.createElement('button');
+     coffeeBtn.textContent = '��️'
+     coffeeBtn.onClick = ()=> updateChat(Job.$id)
+     li.appendChild(coffeeBtn)
      li.appendChild(btn)
+     
      document.querySelector('ul').appendChild(li)
     
    
