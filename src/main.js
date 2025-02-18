@@ -59,7 +59,7 @@ function addJob(e) {
      coffeeBtn.onClick = ()=> updateChat(Job.$id)
      li.appendChild(coffeeBtn)
      li.appendChild(btn)
-     
+
      document.querySelector('ul').appendChild(li)
     
    
@@ -73,6 +73,19 @@ function addJob(e) {
      );
      document.getElementById(id).remove()
 
+   }
+
+   async function updateChat(id) {
+     const result = await databases.updateDocument(
+    import.meta.env.VITE_APPWRITE_DATABASE_ID, // databaseId
+    import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
+    id, // documentId
+    {}, // data (optional)
+  //  ["read("any")"] // permissions (optional)
+);
+
+console.log(result);
+     
    }
 // promise.then(function (response) {
 //     console.log(response);
