@@ -76,7 +76,7 @@ function addJob(e) {
    }
 
    async function updateChat(id) {
-     const result = await databases.updateDocument(
+     const result =  databases.updateDocument(
     import.meta.env.VITE_APPWRITE_DATABASE_ID, // databaseId
     import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
     id, // documentId
@@ -84,7 +84,8 @@ function addJob(e) {
   //  ["read("any")"] // permissions (optional)
 );
 
-console.log(result);
+     console.log(result);
+     result.then(function () { location.reload() })
      
    }
 // promise.then(function (response) {
