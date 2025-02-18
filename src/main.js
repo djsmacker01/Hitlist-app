@@ -80,7 +80,7 @@ function addJob(e) {
     import.meta.env.VITE_APPWRITE_DATABASE_ID, // databaseId
     import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
     id, // documentId
-    {'chat':true}, // data (optional)
+    {chat:true}, // data (optional)
   //  ["read("any")"] // permissions (optional)
 );
 
