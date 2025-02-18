@@ -81,18 +81,14 @@ function addJob(e) {
     import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
     id, // documentId
     {chat:true}, // data (optional)
-  //  ["read("any")"] // permissions (optional)
+  
 );
 
      console.log(result);
      result.then(function () { location.reload() })
      
    }
-// promise.then(function (response) {
-//     console.log(response);
-// }, function (error) {
-//     console.log(error);
-// });
+
 }
 addJobsToDom()
 
