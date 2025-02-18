@@ -54,16 +54,17 @@ function addJob(e) {
      btn.onclick = () => removeJob(job.$id)
      li.appendChild(btn)
      document.querySelector('ul').appendChild(li)
-
+    
    
    })
 
-   function removeJob(id) {
+   async function removeJob(id) {
      const result = await databases.deleteDocument(
     import.meta.env.VITE_APPWRITE_DATABASE_ID, // databaseId
     import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
     id // documentId
-);
+     );
+     document.getElementById(id).remove()
 
    }
 // promise.then(function (response) {
