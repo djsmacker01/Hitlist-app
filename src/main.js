@@ -55,7 +55,7 @@ function addJob(e) {
      
 
      const coffeeBtn = document.createElement('button');
-     coffeeBtn.textContent = '☕'
+     coffeeBtn.textContent = '🍵'
      coffeeBtn.onClick = ()=> updateChat(Job.$id)
      li.appendChild(coffeeBtn)
      li.appendChild(btn)
