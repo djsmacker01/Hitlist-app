@@ -46,7 +46,7 @@ function addJob(e) {
    // console.log(response.documents[3]);
    response.documents.forEach((job) => {
      const li = document.createElement('li');
-     li.textContent = `${job["company-name"]} ${job['date-added']} ${job["role"]} ${job["location"]} ${job['position-type']} ${job['source']} coffee chat ${job['chat']} `;
+     li.textContent = `${job["company-name"]} ${job['date-added']} ${job["role"]} ${job["location"]} ${job['position-type']} ${job['source']} coffee chat? ${job['chat']} `;
      
      li.id = job.$id
      const btn = document.createElement('button');
