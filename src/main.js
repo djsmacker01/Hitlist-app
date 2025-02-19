@@ -56,7 +56,8 @@ function addJob(e) {
 
      const coffeeBtn = document.createElement('button');
      coffeeBtn.textContent = '🍵'
-     coffeeBtn.onClick = ()=> updateChat(Job.$id)
+     coffeeBtn.onClick = () => updateChat(Job.$id)
+     
      li.appendChild(coffeeBtn)
      li.appendChild(btn)
 
@@ -80,7 +81,7 @@ function addJob(e) {
     import.meta.env.VITE_APPWRITE_DATABASE_ID, // databaseId
     import.meta.env.VITE_APPWRITE_COLLECTION_ID, // collectionId
     id, // documentId
-    {chat:true}, // data (optional)
+    {'chat':true}, // data (optional)
   
 );
 
